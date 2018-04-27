@@ -49,7 +49,7 @@ class UserLeavingMessage(models.Model):
         return self.subject
 
 
-class UserAdress(models.Model):
+class UserAddress(models.Model):
     user = models.ForeignKey(User,verbose_name="用户")
     district = models.CharField(max_length=100,default="",verbose_name="区域")
     address = models.CharField(max_length=100,default="",verbose_name="详细地址")

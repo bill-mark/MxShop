@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
+# encoding:utf-8
 
 import os
 import sys
@@ -45,7 +46,9 @@ INSTALLED_APPS = [
     'DjangoUeditor',
     'goods.apps.GoodsConfig',
     'trade.apps.TradeConfig',
-    'user_operation.apps.UserOperationConfig'
+    'user_operation.apps.UserOperationConfig',
+    'crispy_forms',
+    'xadmin',
 ]
 
 MIDDLEWARE = [
@@ -119,15 +122,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+#设置时区
+LANGUAGE_CODE = 'zh-hans'  #中文支持，django1.8以后支持；1.8以前是zh-cn
+TIME_ZONE = 'Asia/Shanghai'
 USE_I18N = True
-
 USE_L10N = True
+USE_TZ = False   #默认是Ture，时间是utc时间，由于我们要用本地时间，所用手动修改为false！！！！
 
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
