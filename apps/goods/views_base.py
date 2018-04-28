@@ -12,7 +12,7 @@ class GoodsListView(View):
         "通过django的view实现商品列表页"
 
         json_list = []
-        goods = Goods.objects.all()[0:10] #切片操作 取前十个数
+        goods = Goods.objects.all()[0:10] #切片操作 取前十个数 0可以省略
         for good in goods:
             json_dict = {}
             json_dict["name"] = good.name
