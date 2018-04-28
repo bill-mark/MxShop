@@ -13,10 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+
+# encoding:utf-8
 from django.conf.urls import url
 # from django.contrib import admin
 import xadmin
+from MxShop.settings import MEDIA_ROOT
+from django.views.static import serve
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
+    url(r'^media/(?P<path>.*)$',serve,{"document_root":MEDIA_ROOT})
+
+    url(r'goods/$',)
 ]
