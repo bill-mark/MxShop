@@ -20,6 +20,8 @@ class GoodsListView(View):
             json_dict["market_price"] = good.market_price
             json_list.append(json_dict)
 
+        from django.forms.models import model_to_dict
+
         from django.http import HttpResponse
         import json
         return HttpResponse(json.dumps(json_list),content_type="application/json")
