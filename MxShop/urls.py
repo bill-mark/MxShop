@@ -20,8 +20,10 @@ from django.conf.urls import url,include
 import xadmin
 from MxShop.settings import MEDIA_ROOT
 from django.views.static import serve
-from goods.views_base import GoodsListView
+
 from rest_framework.documentation import include_docs_urls
+
+from goods.views import GoodsListView
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
@@ -30,5 +32,5 @@ urlpatterns = [
 
     url(r'goods/$',GoodsListView.as_view(),name="goods-list"),
 
-    url(r'docs/',include_docs_urls(title="慕学生鲜")),
+    url(r'docs/',include_docs_urls(title="慕学生鲜"))
 ]
