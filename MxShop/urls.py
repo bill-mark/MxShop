@@ -23,6 +23,7 @@ from django.views.static import serve
 
 from rest_framework.documentation import include_docs_urls
 
+from goods.views_base import GoodsListView_test
 from goods.views import GoodsListView
 
 urlpatterns = [
@@ -30,6 +31,10 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^media/(?P<path>.*)$',serve,{"document_root":MEDIA_ROOT}),
 
+    #商品列表页test
+    url(r'goods_test/$',GoodsListView_test.as_view(),name="goods-list-test"),
+
+    #商品列表页
     url(r'goods/$',GoodsListView.as_view(),name="goods-list"),
 
     url(r'docs/',include_docs_urls(title="慕学生鲜"))
