@@ -16,7 +16,6 @@ Including another URLconf
 
 # encoding:utf-8
 from django.conf.urls import url,include
-# from django.contrib import admin
 import xadmin
 from MxShop.settings import MEDIA_ROOT
 from django.views.static import serve
