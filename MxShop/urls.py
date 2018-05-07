@@ -24,8 +24,8 @@ from rest_framework.documentation import include_docs_urls
 from rest_framework.routers import DefaultRouter
 from goods.views import GoodsListViewSet
 
-router = DefaultRouter()
 
+router = DefaultRouter()
 #配置goods的URL
 router.register(r'goods', GoodsListViewSet)
 
@@ -35,7 +35,7 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^media/(?P<path>.*)$',serve,{"document_root":MEDIA_ROOT}),
     #商品列表页test
-    url(r'goods_test/$',GoodsListView_test.as_view() ),
+    url(r'goods_test/$',GoodsListView_test.as_view()),
 
     url(r'^', include(router.urls)),
 
