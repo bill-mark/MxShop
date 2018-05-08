@@ -22,12 +22,14 @@ from django.views.static import serve
 from goods.views_base import GoodsListView_test
 from rest_framework.documentation import include_docs_urls
 from rest_framework.routers import DefaultRouter
-from goods.views import GoodsListViewSet
+from goods.views import GoodsListViewSet,CategoryViewset
 
 
 router = DefaultRouter()
 #配置goods的URL
-router.register(r'goods', GoodsListViewSet)
+router.register(r'goods', GoodsListViewSet,base_name="goods")
+#配置category的URL
+router.register(r'categorys', CategoryViewset,base_name="categorys")
 
 
 urlpatterns = [
